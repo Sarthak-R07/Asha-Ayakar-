@@ -4,32 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asha Ayakar - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; max-width: 800px; margin: 0 auto; color: #333; }
-        header { text-align: center; padding-bottom: 20px; border-bottom: 2px solid #eee; }
-        section { margin-top: 20px; }
+        :root {
+            --primary: #2c3e50;
+            --text: #333;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            overflow-x: hidden;
+        }
+        /* Bubble Animation */
+        .bubbles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            animation: float 10s infinite ease-in;
+        }
+        .bubble:nth-child(1) { width: 80px; height: 80px; left: 10%; animation-duration: 8s; }
+        .bubble:nth-child(2) { width: 40px; height: 40px; left: 30%; animation-duration: 5s; animation-delay: 2s; }
+        .bubble:nth-child(3) { width: 60px; height: 60px; left: 50%; animation-duration: 10s; animation-delay: 4s; }
+        .bubble:nth-child(4) { width: 50px; height: 50px; left: 70%; animation-duration: 7s; animation-delay: 1s; }
+        .bubble:nth-child(5) { width: 90px; height: 90px; left: 85%; animation-duration: 12s; animation-delay: 3s; }
+        
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+        }
+
+        .container {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: 1;
+        }
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+        h1 { font-size: 2.5em; margin-bottom: 5px; }
+        p { line-height: 1.8; }
         .doc-list { list-style-type: none; padding: 0; }
-        .doc-list li { margin-bottom: 10px; }
-        .doc-list a { text-decoration: none; color: #0366d6; font-weight: bold; }
-        .doc-list a:hover { text-decoration: underline; }
+        .doc-list li { 
+            margin-bottom: 15px; 
+            background: #fff; 
+            padding: 15px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            transition: transform 0.3s ease; 
+        }
+        .doc-list li:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .doc-list a { text-decoration: none; color: #0366d6; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .doc-list a:hover { color: #0056b3; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Asha Ayakar</h1>
-        <p>Digital Logic Design Educator & Researcher</p>
-    </header>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Welcome! I am a professor of Digital Logic Design with a passion for teaching and electronics. This space is dedicated to sharing my academic resources, course documents, and updates with my students.</p>
-    </section>
-    <section id="documents">
-        <h2>Recent Documents & Resources</h2>
-        <p>Click the links below to view or download the latest course materials:</p>
-        <ul class="doc-list">
-            <li>📄 <a href="docs/syllabus.pdf" target="_blank">Course Syllabus (PDF)</a></li>
-            <li>📄 <a href="docs/lecture1.pdf" target="_blank">Lecture 1: Introduction to Logic Gates (PDF)</a></li>
-        </ul>
-    </section>
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Professor Asha Ayakar</h1>
+            <p>Digital Logic Design Educator & Researcher</p>
+        </header>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome! I am a professor of Digital Logic Design with a passion for teaching and electronics. This space is dedicated to sharing my academic resources, course documents, and updates with my students.</p>
+        </section>
+        <section id="documents">
+            <h2>Recent Documents & Resources</h2>
+            <p>Click the links below to view or download the latest course materials:</p>
+            <ul class="doc-list">
+                <li><a href="docs/syllabus.pdf" target="_blank">📄 Course Syllabus (PDF)</a></li>
+                <li><a href="docs/lecture1.pdf" target="_blank">📄 Lecture 1: Introduction to Logic Gates (PDF)</a></li>
+            </ul>
+        </section>
+    </div>
 </body>
 </html>
