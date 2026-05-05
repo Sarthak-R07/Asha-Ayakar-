@@ -108,16 +108,13 @@
             backdrop-filter: blur(8px);
             position: relative;
         }
-        .profile-ring::after {
-            content: '👩‍🏫';
-            font-size: 72px;
-            line-height: 1;
-            opacity: 0.85;
+        .profile-ring img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
         }
-        /* Once you add a real photo, use:
-           <img src="assets/images/profile.jpg" alt="Prof. Asha Ayakar"
-                style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
-           inside .profile-ring and remove the ::after pseudo-element. */
 
         .hero-text {
             flex: 1;
@@ -272,7 +269,11 @@
 
         <!-- ── Hero Header ── -->
         <header class="hero">
-            <div class="profile-ring" title="Profile Photo – Asha Ayakar"></div>
+            <div class="profile-ring">
+                <img src="https://github.com/user-attachments/assets/22c8c8e1-a4c5-4131-a3c3-dee678d10034"
+                     alt="Prof. Asha Ayakar"
+                     title="Profile Photo – Asha Ayakar">
+            </div>
             <div class="hero-text">
                 <h1>Prof. Asha Ayakar</h1>
                 <p class="designation">Digital Logic Design Educator &amp; Researcher</p>
